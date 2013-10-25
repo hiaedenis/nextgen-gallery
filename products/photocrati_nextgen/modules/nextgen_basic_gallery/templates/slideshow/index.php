@@ -43,7 +43,9 @@
     // adding the flash parameter
     //$swfobject->add_flashvars( 'file', urlencode ( trailingslashit ( home_url() ) . 'index.php?callback=imagerotator&gid=' . $displayed_gallery_id ) );
     $swfobject->add_flashvars( 'file', urlencode ( $mediarss_link ) );
-    $swfobject->add_flashvars( 'shuffle', $flash_shuffle, 'false', 'bool');
+    //$swfobject->add_flashvars( 'shuffle', $flash_shuffle, 'false', 'bool');
+    //modified om October 20 by Erik Geurts - reason: setting $flash_shuffle is either missing or ignored, forcing shuffle to false for backward compability
+    $swfobject->add_flashvars( 'shuffle', $flash_shuffle, 'true', 'bool');
 
     // option has oposite meaning : true should switch to next image
     $swfobject->add_flashvars( 'linkfromdisplay', !$flash_next_on_click, 'false', 'bool');

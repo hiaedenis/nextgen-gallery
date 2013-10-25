@@ -8,13 +8,16 @@
 			$width		= $thumb_size['width'];
 			$height		= $thumb_size['height'];
 			
-			$image_title = $image->description;
+			//$image_title = $image->description;
+			$image_title = trim($image->description);
 			
 			if ($image_title == null)
 				$image_title = $image->alttext;
 
-            if (strlen($image_title) >= 25)
-                $image_title = substr_replace($image_title, '...', 15, -10);
+            //if (strlen($image_title) >= 25)
+                //$image_title = substr_replace($image_title, '...', 15, -10);
+            if (strlen($image_title) >= 50)
+                $image_title = substr_replace($image_title, '...', 35, -10);
             ?>
 		<track>
 			<title><![CDATA[<?php echo_h($image_title)?>]]></title>
